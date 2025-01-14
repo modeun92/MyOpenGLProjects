@@ -51,6 +51,11 @@ int main() {
     //    return -1;
     //}
 
+    glewExperimental = GL_TRUE;
+    if (glewInit() != GLEW_OK) {
+        std::cerr << "Failed to initialize GLEW\n";
+        return -1;
+    }
     // build and compile our shader zprogram
     // ------------------------------------
     Shader ourShader("resources/shaders/tex2d.vs", "resources/shaders/tex2d.fs");

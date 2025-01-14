@@ -1,5 +1,10 @@
 #pragma once
-#include <glad/glad.h>
+
+#ifndef GLEW_STATICC
+#define GLEW_STATICC
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#endif
 
 #include <string>
 #include <fstream>
@@ -10,6 +15,7 @@ class Shader {
 public:
 	unsigned int ID;
 	Shader(const char* vertexPath, const char* fragmentPath);
+	void dispose();
 	void use();
 	void setBool(const string& name, bool value) const;
 	void setInt(const string& name, int value) const;

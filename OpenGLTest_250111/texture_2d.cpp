@@ -58,7 +58,7 @@
 //    }
 //    // build and compile our shader zprogram
 //    // ------------------------------------
-//    Shader ourShader("resources/shaders/tex2d.vs", "resources/shaders/tex2d.fs");
+//    Shader l_OurShader("resources/shaders/tex2d.vs", "resources/shaders/tex2d.fs");
 //
 //    // set up vertex data (and buffer(s)) and configure vertex attributes
 //    // ------------------------------------------------------------------
@@ -155,14 +155,14 @@
 //
 //    // tell opengl for each sampler to which texture unit it belongs to (only has to be done once)
 //    // -------------------------------------------------------------------------------------------
-//    ourShader.use(); // don't forget to activate/use the shader before setting uniforms!
+//    l_OurShader.Use(); // don't forget to activate/use the shader before setting uniforms!
 //
 //    // either set it manually like so:
 //    //glUniform1i(glGetUniformLocation(ourShader.ID, "texture1"), texture1);
 //    // or set it via the texture class
 //    // 
-//    ourShader.setInt("texture1", 0);
-//    ourShader.setInt("texture2", 1);
+//    l_OurShader.SetInt("texture1", 0);
+//    l_OurShader.SetInt("texture2", 1);
 //    // bind textures on corresponding texture units
 //
 //    glActiveTexture(GL_TEXTURE0);
@@ -186,7 +186,7 @@
 //
 //
 //        // render container
-//        ourShader.use();
+//        l_OurShader.Use();
 //        glBindVertexArray(VAO);
 //        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 //
@@ -202,7 +202,7 @@
 //    glDeleteBuffers(1, &VBO);
 //    glDeleteBuffers(1, &EBO);
 //
-//    ourShader.dispose();
+//    l_OurShader.Dispose();
 //    // glfw: terminate, clearing all previously allocated GLFW resources.
 //    // ------------------------------------------------------------------
 //    glfwTerminate();

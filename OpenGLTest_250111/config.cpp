@@ -1,12 +1,12 @@
-#include <iostream>
-
-#ifndef GLEW_STATICC
-#define GLEW_STATICC
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#endif
-
-#include "Shader.h"
+//#include <iostream>
+//
+//#ifndef GLEW_STATICC
+//#define GLEW_STATICC
+//#include <GL/glew.h>
+//#include <GLFW/glfw3.h>
+//#endif
+//
+//#include "Shader.h"
 
 //#define STB_IMAGE_IMPLEMENTATION
 //#include "stb_image.h"

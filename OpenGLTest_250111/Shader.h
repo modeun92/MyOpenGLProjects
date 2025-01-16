@@ -23,8 +23,9 @@ public:
 	void SetBool(const string&, bool) const;
 	void SetInt(const string&, int) const;
 	void SetFloat(const string&, float) const;
-  void Shader::SetMat4(const string&, glm::mat4) const;
+	void SetMat4(const string&, glm::mat4) const;
 private:
 	unsigned int m_Id;
-	unsigned int GenerateShader(const char*, int);
+	unsigned int GenerateShader(const char*, int) const;
+	int GetUniformLocation(const string&) const;
 };

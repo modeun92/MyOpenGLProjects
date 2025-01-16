@@ -32,18 +32,21 @@ void Shader::Dispose() {
 	glDeleteProgram(m_Id);
 }
 void Shader::SetBool(const string& a_Name, bool a_Value) const {
-	glUniform1i(glGetUniformLocation(m_Id, a_Name.c_str()), (int)a_Value);
+	glUniform1i(GetUniformLocation(a_Name), (int)a_Value);
 }
 void Shader::SetInt(const string& a_Name, int a_Value) const {
-	glUniform1i(glGetUniformLocation(m_Id, a_Name.c_str()), a_Value);
+	glUniform1i(GetUniformLocation(a_Name), a_Value);
 }
 void Shader::SetFloat(const string& a_Name, float a_Value) const {
-	glUniform1f(glGetUniformLocation(m_Id, a_Name.c_str()), a_Value);
+	glUniform1f(GetUniformLocation(a_Name), a_Value);
 }
-void Shader::SetMat4(const string& a_Name, glm::mat4 a_Value) const {
-	glUniformMatrix4fv(glGetUniformLocation(ID, a_Name.c_str()), 1, GL_FALSE, glm::value_ptr(a_Value));
+void Shader::SetMat4(const string& a_Name, glm::mat4 a_Value) const {	
+	glUniformMatrix4fv(GetUniformLocation(a_Name), 1, GL_FALSE, glm::value_ptr(a_Value));
 }
-unsigned int Shader::GenerateShader(const char* a_ShaderPath, int a_ShaderType) {
+int Shader::GetUniformLocation(const string& a_Name) const {
+	return glGetUniformLocation(m_Id, a_Name.c_str());
+}
+unsigned int Shader::GenerateShader(const char* a_ShaderPath, int a_ShaderType) const {
 	string l_Code;
 	ifstream l_File;
 	l_File.exceptions(ifstream::failbit | ifstream::badbit);

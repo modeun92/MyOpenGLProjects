@@ -6,6 +6,10 @@
 #include <GLFW/glfw3.h>
 #endif
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -19,6 +23,7 @@ public:
 	void SetBool(const string&, bool) const;
 	void SetInt(const string&, int) const;
 	void SetFloat(const string&, float) const;
+  void Shader::SetMat4(const string&, glm::mat4) const;
 private:
 	unsigned int m_Id;
 	unsigned int GenerateShader(const char*, int);

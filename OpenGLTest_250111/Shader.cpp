@@ -40,6 +40,9 @@ void Shader::SetInt(const string& a_Name, int a_Value) const {
 void Shader::SetFloat(const string& a_Name, float a_Value) const {
 	glUniform1f(glGetUniformLocation(m_Id, a_Name.c_str()), a_Value);
 }
+void Shader::SetMat4(const string& a_Name, glm::mat4 a_Value) const {
+	glUniformMatrix4fv(glGetUniformLocation(ID, a_Name.c_str()), 1, GL_FALSE, glm::value_ptr(a_Value));
+}
 unsigned int Shader::GenerateShader(const char* a_ShaderPath, int a_ShaderType) {
 	string l_Code;
 	ifstream l_File;

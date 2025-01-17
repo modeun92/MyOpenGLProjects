@@ -2,7 +2,12 @@
 
 #include "GlewfwConfig.cpp"
 
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
+using namespace std;
 class Shader {
 public:
 	Shader(const char*, const char*);

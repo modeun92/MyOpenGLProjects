@@ -1,12 +1,5 @@
 #include "Shader.h"
 
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
-
-using namespace std;
-
 Shader::Shader(const char* a_VertexPath, const char* a_FragmentPath) {
 	unsigned int 
 		l_VertexShaderId(GenerateShader(a_VertexPath, GL_VERTEX_SHADER)),

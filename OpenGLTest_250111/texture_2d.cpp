@@ -79,6 +79,8 @@ int main() {
         std::cerr << "Failed to initialize GLEW\n";
         return -1;
     }
+    //glEnable(GL_DEPTH_TEST);
+
     // build and compile our shader zprogram
     // ------------------------------------
     Shader l_OurShader("resources/shaders/tex2d.vs", "resources/shaders/tex2d.fs");
@@ -206,7 +208,7 @@ int main() {
         // ------
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-
+        //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // render container
         l_OurShader.Use();

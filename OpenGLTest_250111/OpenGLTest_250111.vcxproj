@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BasicGlfwEventConfig.cpp" />
+    <ClCompile Include="CubeDataConfig.cpp" />
     <ClCompile Include="GlewfwConfig.cpp" />
     <ClCompile Include="GlmConfig.cpp" />
     <ClCompile Include="GlmShader.cpp" />

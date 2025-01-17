@@ -1,16 +1,11 @@
 #include <iostream>
 
-#ifndef GLEW_STATICC
-#define GLEW_STATICC
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#endif
+#include "GlewfwConfig.cpp"
+#include "GlmConfig.cpp"
 
 #include "Shader.h"
 
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-//#include <GLFW/glfw3.h>
+#include "StbImageConfig.cpp"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -18,7 +13,35 @@ void processInput(GLFWwindow* window);
 // settings
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
+void dull() {
+    glm::mat4 model = glm::mat4(1.0f);
+    model = glm::rotate(model, 
+        glm::radians(-55.0f),
+        glm::vec3(1.0f, 0.0f, 0.0f));
 
+    glm::mat4 view = glm::mat4(1.0f);
+    view = glm::translate(view,
+        glm::vec3(0.0f, 0.0f, -3.0f));
+
+    glm::mat4 projection = glm::mat4(1.0f);
+    projection = glm::perspective(
+        glm::radians(45.0f),
+        800.0f / 600.0f,
+        0.1f,
+        100.0f);
+}
+void doll(glm::mat4 a_Model, glm::mat4 a_View, glm::mat4 a_Projection) {
+    int l_ShaderId = 0;
+
+    int l_ModelLocation = glGetUniformLocation(l_ShaderId, "model");
+    glUniformMatrix4fv(l_ModelLocation, 1, GL_FALSE, glm::value_ptr(a_Model));
+
+    int l_ViewLocation = glGetUniformLocation(l_ShaderId, "view");
+    glUniformMatrix4fv(l_ViewLocation, 1, GL_FALSE, glm::value_ptr(a_View));
+
+    int l_ProjectionLocation = glGetUniformLocation(l_ShaderId, "projection");
+    glUniformMatrix4fv(l_ProjectionLocation, 1, GL_FALSE, glm::value_ptr(a_Projection));
+}
 int main() {
     // glfw: initialize and configure
     // ------------------------------

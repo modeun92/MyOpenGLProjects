@@ -1,5 +1,12 @@
 #include "Shader.h"
 
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
+using namespace std;
+
 Shader::Shader(const char* a_VertexPath, const char* a_FragmentPath) {
 	unsigned int 
 		l_VertexShaderId(GenerateShader(a_VertexPath, GL_VERTEX_SHADER)),
@@ -39,9 +46,6 @@ void Shader::SetInt(const string& a_Name, int a_Value) const {
 }
 void Shader::SetFloat(const string& a_Name, float a_Value) const {
 	glUniform1f(GetUniformLocation(a_Name), a_Value);
-}
-void Shader::SetMat4(const string& a_Name, glm::mat4 a_Value) const {	
-	glUniformMatrix4fv(GetUniformLocation(a_Name), 1, GL_FALSE, glm::value_ptr(a_Value));
 }
 int Shader::GetUniformLocation(const string& a_Name) const {
 	return glGetUniformLocation(m_Id, a_Name.c_str());

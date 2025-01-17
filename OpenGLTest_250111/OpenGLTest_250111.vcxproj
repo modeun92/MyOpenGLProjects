@@ -139,14 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="config.cpp" />
+    <ClCompile Include="BasicGlfwEventConfig.cpp" />
+    <ClCompile Include="GlewfwConfig.cpp" />
+    <ClCompile Include="GlmConfig.cpp" />
+    <ClCompile Include="GlmShader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="GlmMvpShader.cpp" />
     <ClCompile Include="my_glm_test.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="StbImageConfig.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="texture_2d.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GlmShader.h" />
+    <ClInclude Include="GlmMvpShader.h" />
     <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

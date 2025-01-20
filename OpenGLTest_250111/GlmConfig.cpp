@@ -1,3 +1,4 @@
+#pragma once
 #ifndef GLM_IMPLEMENTATION
 #define GLM_IMPLEMENTATION
 #include <glm/glm.hpp>

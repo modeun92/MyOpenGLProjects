@@ -1,0 +1,19 @@
+//#ifndef STB_IMAGE_IMPLEMENTATION
+//#include <stb_image.h>
+//#define STB_IMAGE_IMPLEMENTATION
+//#endif // !STB_IMAGE_IMPLEMENTATION
+
+//#ifndef GLI_IMAGE_IMPLEMENTATION
+//#include <gli/gli.hpp>
+//#define GLI_IMAGE_IMPLEMENTATION
+//#endif // !GLI_IMAGE_IMPLEMENTATION
+
+//#ifndef DEVIL_IMAGE_IMPLEMENTATION
+//#include <IL/il.h>
+//#define DEVIL_IMAGE_IMPLEMENTATION
+//#endif // !DEVIL_IMAGE_IMPLEMENTATION
+
+#ifndef FREE_IMAGE_IMPLEMENTATION
+#include <FreeImage/FreeImage.h>
+#define FREE_IMAGE_IMPLEMENTATION
+#endif // !FREE_IMAGE_IMPLEMENTATION
